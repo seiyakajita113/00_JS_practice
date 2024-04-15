@@ -31,6 +31,7 @@
         const info = parson.information();
         console.log(info)
 
+        //もっと簡単なオブジェクト
         const dict = { apple: "りんご", banana: "バナナ", orange: "オレンジ" };
 
         console.log(dict.apple);
@@ -38,7 +39,13 @@
 
         dict.apple = "林檎";
         console.log(dict);
-//{apple:"林檎",banana:"バナナ",orange:"オレンジ"}
+
+
+        dict.grape = "ぶどう";
+        console.log(dict);
+
+        delete dict.orange;
+        console.log(dict);
     </script>
 </body>
 
