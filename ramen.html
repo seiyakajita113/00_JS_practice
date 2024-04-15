@@ -35,6 +35,22 @@
         // メソッドの再実行
         demaeicchou.preview();
 
+
+        class InstantNoodle {
+            // 静的プロパティ
+            static TYPE = "インスタントラーメン";
+            // 動的メソッド
+            static making() {
+                return `<p>${InstantNoodle.TYPE}は、鍋でつくリます。</p>`
+            }
+        }
+
+
+
+
+
+
+
         class InstantNoodle {
             //処理などを書く
             //コンストラクタ
@@ -42,11 +58,39 @@
                 this.name = ramen;
                 this.soup = taste;
             }
+            descript() {
+                return `<p>${this.name}は、${this.soup}味です。</p>`;
+            }
         }
 
-        //インスタンス化
-        const soltRamen = new InstantNoodle("札幌一番", "塩");
+        // //インスタンス化
+        // const soltRamen = new InstantNoodle("札幌一番塩", "塩");
+        // console.log(soltRamen); //オブジェクト
+        // console.log(soltRamen, name + "は" + soltRamen.soup + "味");
 
+        // const demaeicchouN = new InstantNoodle("出前一丁", "醤油");
+        // console.log(demaeicchouN); //オブジェクト
+        // console.log(demaeicchouN, name + "は" + demaeicchouN.soup + "味");
+
+        // //メソッドを使って、呼び出す
+
+        // console.log(soltRamen.descript(), demaeicchouN.descript());
+
+        // document.body.insertAdjacentHTML("beforeend", soltRamen.descript());
+        // document.body.insertAdjacentHTML("beforeend", demaeicchouN.descript());
+
+        const ramens = [];
+        ramens.push(new InstantNoodle("サッポロ一番塩", "塩"));
+        ramens.push(new InstantNoodle("出前一丁", "醤油"));
+        console.log(ramens);  //オブジェクトの配列
+
+        //ramenの中にramensの要素(値)が入る
+        ramens.forEach((ramen) => {
+            //lengsを書かなくても、要素の数だけ回る
+            document.body.insertAdjacentHTML("beforeend", ramen.descript());
+        });
+        document.body.insertAdjacentHTML("beforeend", InstantNoodle.making());
+        console.log(InstantNoodle.TYPE);
 
     </script>
 
