@@ -15,13 +15,41 @@
         const demaeicchou = {
             name: "出前一丁",
             soup: "醤油",
+            // メソッド
             preview: function () {
                 const area = document.querySelector("#result");
                 area.innerHTML = `${this.name}は、${this.soup}ラーメンです。`;
             },
         };
         demaeicchou.preview();
+        //醤油を上書き
+        demaeicchou.soup == "とんこつ"
+        // previewメソッドを上書き
+        demaeicchou.preview = function () {
+            const area = document.querySelector("#result");
+            area.innerHTML = ` ${this.name}は,${this.soup}ラーメンではありません。`;
+        }
+        // 出前一丁を消す
+        delete demaeicchou.name;
+
+        // メソッドの再実行
+        demaeicchou.preview();
+
+        class InstantNoodle {
+            //処理などを書く
+            //コンストラクタ
+            constructor(ramen, taste) {
+                this.name = ramen;
+                this.soup = taste;
+            }
+        }
+
+        //インスタンス化
+        const soltRamen = new InstantNoodle("札幌一番", "塩");
+
+
     </script>
+
 </body>
 
 </html>
