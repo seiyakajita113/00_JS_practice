@@ -1,0 +1,46 @@
+form.html
+<div class="wrapper">
+    <h1>申し込みフォーム</h1>
+    <form>
+        <label for="yourN">氏名：<input type="text" value="十来 電人" id="yourN"></label>
+        <label for="schoolN">学校名：<input type="text" value="トライデントコンピュータ専門学校" id="schoolN"></label>
+        <label for="telN">電話番号：<input type="tel" value="052-581-0581" id="telN"></label>
+        <button type="button">送信</button>
+    </form>
+    <h2>結果</h2>
+    <div class="result"></div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    //ここに書いてください。
+    // var yourN = "十来 電人";
+
+    // var schoolN = "トライデントコンピュータ専門学校"
+    // var telN = "052-581-0581"
+
+
+
+    // document.getElementById("yourN").onclick = function () {
+    //     document.getElementById("button").innerHTML = "十来" + document.getElementById("yourN").value + "電人";
+    // }
+
+    const submitBtn = document.querySelector('button');
+    const result = document.querySelector('.result');
+    const unorder = document.createElement('ul');
+    result.appendChild(unorder);
+
+    submitBtn.addEventListener('click', function () {
+        const values = document.querySelectorAll('input');
+        unorder.innerHTML = '';
+        for (let i = 0; i < values.length; i++) {
+            const formlist = document.createElement('li');
+            formlist.innerHTML = values[i].value;
+            unorder.appendChild(formlist);
+            //unorder.insertAdjacentHTML("beforeend",`<li>${values[i].value}</li>`)
+        }
+    });
+</script>
+</body>
+
+</html>

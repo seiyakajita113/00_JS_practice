@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>class InstantNoodle {
+            // 動的プロパティ
+            static TYPE = "インスタントラーメン";
+            //動的メソッド
+            static making() {
+                return `<p>${InstantNoodle.TYPE}は、鍋で作ります。</p>`;
+            }
+            //オブジェクトではなく,テンプレートリテラルでは、${変数、値}をそのまま入れることができる
+
+            constructor(ramen, taste) {
+                this.name = ramen;
+                this.soup = taste;
+            }
+        }
+        document.body.insertAdjacentHTML('beforeend', InstantNoodle.making());
+        console.log(InstantNoodle.TYPE);
+
+
+
+        //サブクラス *instantNoodleを継承したMakerクラス
+        class Maker extends InstantNoodle {
+            // InstantNoodleでは、引数が3つだったが,Makerでは2つ
+            constructor(ramen, taste, company) {
+                super(ramen, taste);
+                this.maker = company;
+            }
+            makerDescript() {
+                return `<p>販売元は、${this.maker}です。</p>`;
+            }
+        }
+
+        //サブクラスのインスタンス化=オブジェクト化
+        const maker = new Maker("マルちゃん正麺", "しょうゆ", "東洋水産");
+
+        //サブクラスのメソッド
+        document.body.insertAdjacentHTML("beforeend", maker.makerDescript());
+
+        //スーパークラスのメソッドも利用できる
+        document.body.insertAdjacentHTML("beforeend", maker.descript());
+
+
+
+        ramens.forEach((ramen) => {
+            //スーパークラスは変わらず
+            document.body.insertAdjacentHTML("beforeend", ramen.descript());
+        });
+        const maker2 = new Maker("マルちゃん正麺", "しょうゆ", "東洋水産");
+        //サブクラスはオーバーライドされる
+        document.body.insertAdjacentHTML("beforeend", maker.descript());
+
+    </script>
+</body>
+
+</html>

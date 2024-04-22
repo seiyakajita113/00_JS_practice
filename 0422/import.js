@@ -1,0 +1,8 @@
+// import { モジュール名 } from "./JavaScriptファイル.js";
+import { myNumber, myObject } from "./export.js";
+
+console.log(myNumber);
+console.log(myObject);
+
+
+// インポート側もモジュール
