@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+h1 {
+    margin-top: 200px;
+    text-align: center;
+
+
+}
+
+.sunny {
+    background: orange;
+}
+
+.cloudy {
+    background: linear-gradient(to bottom, orange, rgb(191, 191, 191));
+}
+
+.reiny {
+    background: linear-gradient(to bottom, rgb(0, 162, 255), rgb(191, 191, 191));
+}
+
+nav {
+    text-align: center;
+}
+
+.speaker,
+.speakerstop {
+    margin: auto;
+    display: block;
+}
+
+.forecast {
+    margin-inline: auto;
+    text-align: center;
+}
+
+img {
+    margin: 35px;
+    display: inline-block;
+}
+
+ul {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 19%;
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 10px;
+}

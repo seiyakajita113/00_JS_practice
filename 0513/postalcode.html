@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>JSクイズ④</title>
+</head>
+
+<body>
+    <form>
+        <label for="postal-code">〒 <input type="text" name="postal-code" id="postal-code" value="4500002" /></label>
+        <button type="button">住所表示</button>
+    </form>
+    <div class="result">
+        <dl>
+            <dt>住所</dt>
+            <dd></dd>
+        </dl>
+    </div>
+</body>
+<script>
+    fetch("https://zipcloud.ibsnet.co.jp/api/search")
+        .then(function (response) {
+            if (response.status !== 200) {
+                console.log("問題がありました。Status Code:" + response.status);
+                return;
+            }
+            // Examine the text in the response
+            response.json().then(function (data) {
+                console.log(data);
+            });
+        })
+        .catch(function (err) {
+            console.log("Fetch Error:", err);
+        });
+
+</script>
+
+</html>
