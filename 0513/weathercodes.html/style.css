@@ -70,7 +70,7 @@ button {
 
 .today:hover {
     color: #ffffff;
-    border: 1px solid #2ebb64;
+    border: 1px solid #00ff62;
 }
 
 .today:hover:before {
@@ -137,7 +137,7 @@ button {
 
 .tomorrow:hover {
     color: #ffffff;
-    border: 1px solid #2ebb64;
+    border: 1px solid #00ff62;
 }
 
 .tomorrow:hover:before {
@@ -169,7 +169,7 @@ nav {
 }
 
 img {
-    margin-top: 30px;
+    margin-top: 50px;
     display: inline-block;
 }
 
@@ -215,6 +215,8 @@ li {
     background: linear-gradient(to bottom, rgb(255, 203, 106) 30%, rgb(58, 103, 252));
 }
 
+
+
 /* 曇り */
 .API200 {
     background: rgb(169, 169, 169);
@@ -248,7 +250,7 @@ li {
 
 /* 雨 */
 .API302 {
-    background: linear-gradient(to bottom, rgb(58, 103, 252) 30%, rgb(100, 137, 255));
+    background: linear-gradient(to bottom, rgb(58, 103, 252) 60%, rgb(194, 194, 194));
 }
 
 /* 雨雪 */
